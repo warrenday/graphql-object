@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import gql from "graphql-tag";
-import { parseGraphQLResponse } from "./index";
+import { queryObject } from "./index";
 
-describe("parseGraphQLResponse", () => {
+describe("queryObject", () => {
   it("parses a basic object", () => {
     const query = gql`
       {
@@ -21,7 +21,7 @@ describe("parseGraphQLResponse", () => {
       },
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: {
         id: 5,
@@ -63,7 +63,7 @@ describe("parseGraphQLResponse", () => {
       },
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: {
         id: 5,
@@ -103,7 +103,7 @@ describe("parseGraphQLResponse", () => {
       ],
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: [
         {
@@ -143,7 +143,7 @@ describe("parseGraphQLResponse", () => {
       ],
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: [
         {
@@ -224,7 +224,7 @@ describe("parseGraphQLResponse", () => {
       ],
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: [
         {
@@ -310,7 +310,7 @@ describe("parseGraphQLResponse", () => {
       ],
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: [
         {
@@ -381,7 +381,7 @@ describe("parseGraphQLResponse", () => {
       ],
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: [
         {
@@ -479,7 +479,7 @@ describe("parseGraphQLResponse", () => {
       getString: "Hello World",
     };
 
-    const response = parseGraphQLResponse(query, inputObject);
+    const response = queryObject(query, inputObject);
     expect(response).toEqual({
       getUser: {
         id: 1,
@@ -539,7 +539,7 @@ describe("parseGraphQLResponse", () => {
       },
     };
 
-    const response = parseGraphQLResponse(query, inputObject, {
+    const response = queryObject(query, inputObject, {
       includeMissingData: true,
     });
 
