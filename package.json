@@ -1,5 +1,5 @@
 {
-  "name": "graphql-object",
+  "name": "graphql-local",
   "version": "1.0.0",
   "author": "Warren Day",
   "license": "MIT",
@@ -13,12 +13,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/graphql-object.js",
-      "require": "./dist/graphql-object.umd.cjs"
+      "import": "./dist/graphql-local.js",
+      "require": "./dist/graphql-local.umd.cjs"
     }
   },
-  "main": "./dist/graphql-object.umd.cjs",
-  "module": "./dist/graphql-object.js",
+  "main": "./dist/graphql-local.umd.cjs",
+  "module": "./dist/graphql-local.js",
   "devDependencies": {
     "vite": "^4.0.1",
     "vite-plugin-dts": "^1.7.1",

@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "GraphQL Object",
-      fileName: "graphql-object",
+      name: "GraphQL Local",
+      fileName: "graphql-local",
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
